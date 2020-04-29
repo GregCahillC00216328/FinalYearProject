@@ -1,0 +1,11 @@
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : fritz.box
+   Link-local IPv6 Address . . . . . : fe80::6148:35d9:b1f:8729%10
+   IPv4 Address. . . . . . . . . . . : 192.168.178.23
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Default Gateway . . . . . . . . . : 192.168.178.1
