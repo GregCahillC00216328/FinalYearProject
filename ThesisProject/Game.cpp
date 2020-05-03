@@ -61,7 +61,7 @@ void updateThreadDelay(int &rectX, int& rectY, int num1, int num2)
 {
 	rectX = num1;
 	rectY = num2;
-	std::this_thread::sleep_for(std::chrono::milliseconds(100));
+	std::this_thread::sleep_for(std::chrono::milliseconds(30));
 }
 void handleEventsDelay(int& rectX, int& rectY, bool up, bool down, bool left, bool right)
 {
@@ -148,40 +148,40 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 void Game::update()
 {
 	{		//Delay based sim.
-		std::thread second(updateThreadDelay, std::ref(rect.x), std::ref(rect.y), rectX, rectY);
+		/*std::thread second(updateThreadDelay, std::ref(rect.x), std::ref(rect.y), rectX, rectY);
 		std::thread first(handleEventsDelay, std::ref(rectX), std::ref(rectY), up, down, left, right);
 		first.join();
-		second.join();
+		second.join();*/
 	}
 
 	{// rollback based sim
-		//if (left)
-		//{
-		//	guess = "left";
-		//}
-		//else if (right)
-		//{
-		//	guess = "right";
-		//}
-		//if (up)
-		//{
-		//	guess = "up";
-		//}
-		//else if (down)
-		//{
-		//	guess = "down";
-		//}
-		///* guess= "blank";
-		// if (guess == "blank")
-		// {
-		//	 guess = lastChoice;
-		//}*/
-		// 
-		//std::thread second(updateThreadRollback, std::ref(rect.x), std::ref(rect.y), rectX, rectY);
-		//std::thread first(handleEventsRollback, std::ref(rectX), std::ref(rectY), guess,std::ref(lastChoice));
-		//first.join();
-		//second.join();
-		//guess = "blank";
+		if (left)
+		{
+			guess = "left";
+		}
+		else if (right)
+		{
+			guess = "right";
+		}
+		if (up)
+		{
+			guess = "up";
+		}
+		else if (down)
+		{
+			guess = "down";
+		}
+		/* guess= "blank";
+		 if (guess == "blank")
+		 {
+			 guess = lastChoice;
+		}*/
+		 
+		std::thread second(updateThreadRollback, std::ref(rect.x), std::ref(rect.y), rectX, rectY);
+		std::thread first(handleEventsRollback, std::ref(rectX), std::ref(rectY), guess,std::ref(lastChoice));
+		first.join();
+		second.join();
+		guess = "blank";
 	}
 	//handleUpdatesOfDelay();
 }
