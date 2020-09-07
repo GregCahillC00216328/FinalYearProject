@@ -57,32 +57,32 @@ void Game::handleEvents()
 	}
 
 }
-void updateThreadDelay(int &rectX, int& rectY, int num1, int num2)
-{
-	rectX = num1;
-	rectY = num2;
-	std::this_thread::sleep_for(std::chrono::milliseconds(30));
-}
-void handleEventsDelay(int& rectX, int& rectY, bool up, bool down, bool left, bool right)
-{
-	if (left)
-	{
-		rectX -= 5;
-	}
-	else if (right)
-	{
-		rectX += 5;
-	}
-	if (up)
-	{
-		rectY -= 5;
-	}
-	else if (down)
-	{
-		rectY += 5;
-	}
-	std::this_thread::sleep_for(std::chrono::milliseconds(1));
-}
+////void updateThreadDelay(int &rectX, int& rectY, int num1, int num2)
+////{
+////	rectX = num1;
+////	rectY = num2;
+////	std::this_thread::sleep_for(std::chrono::milliseconds(30));
+////}
+//void handleEventsDelay(int& rectX, int& rectY, bool up, bool down, bool left, bool right)
+//{
+//	if (left)
+//	{
+//		rectX -= 5;
+//	}
+//	else if (right)
+//	{
+//		rectX += 5;
+//	}
+//	if (up)
+//	{
+//		rectY -= 5;
+//	}
+//	else if (down)
+//	{
+//		rectY += 5;
+//	}
+//	std::this_thread::sleep_for(std::chrono::milliseconds(1));
+//}
 void updateThreadRollback(int& rectX, int& rectY, int num1, int num2)
 {
 	rectX = num1;
@@ -141,6 +141,7 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 		isRunning = true;
 	}
+	m_pads.setUp(m_renderer);
 
 	
 
@@ -184,6 +185,7 @@ void Game::update()
 		guess = "blank";
 	}
 	//handleUpdatesOfDelay();
+	m_pads.update(0);
 }
 
 
@@ -202,14 +204,14 @@ void Game::render()
 
 	SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
 
-	
+	m_pads.render(1);
 	SDL_RenderPresent(m_renderer);
 }
 
 
 void Game::clean()
 {
-	stick.close();
+	
 	SDL_DestroyWindow(m_window);
 	SDL_DestroyRenderer(m_renderer);
 	SDL_Quit();

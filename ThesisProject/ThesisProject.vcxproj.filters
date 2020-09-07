@@ -27,10 +27,25 @@
     <ClCompile Include="Rollback.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Joystick.cpp">
+    <ClCompile Include="Paddle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Up.cpp">
+    <ClCompile Include="ClientStuff\Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientStuff\ClientIni.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientStuff\Packet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientStuff\PacketManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientStuff\PacketStructs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientStuff\SendGetMethods.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,19 +62,31 @@
     <ClInclude Include="Rollback.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Down.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Left.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Right.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Up.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Command.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Paddles.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientStuff\Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientStuff\FileTransferData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientStuff\Packet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientStuff\PacketManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientStuff\PacketStructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientStuff\PacketType.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

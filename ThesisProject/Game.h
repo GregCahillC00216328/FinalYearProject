@@ -6,13 +6,14 @@
 #include <iostream>
 #include<stdio.h>
 
-#include "Joystick.h"
 
 #include <stdlib.h>
 #include <iostream>       // std::cout, std::endl
 #include <thread>         // std::this_thread::sleep_for
 #include <chrono>         // std::chrono::seconds
 #include <vector>
+
+#include "Paddles.h"
 
 
 class Game
@@ -45,8 +46,8 @@ private:
 	bool left, right, up, down;
 	int rectX, rectY, rectH, rectW;
 	void handleUpdatesOfDelay();
-	Joystick stick;
 
+	Paddle m_pads;
 	
 
 	

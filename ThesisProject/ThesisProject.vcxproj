@@ -126,23 +126,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ClientStuff\Client.cpp" />
+    <ClCompile Include="ClientStuff\ClientIni.cpp" />
+    <ClCompile Include="ClientStuff\Packet.cpp" />
+    <ClCompile Include="ClientStuff\PacketManager.cpp" />
+    <ClCompile Include="ClientStuff\PacketStructs.cpp" />
+    <ClCompile Include="ClientStuff\SendGetMethods.cpp" />
     <ClCompile Include="Delay.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Joystick.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Paddle.cpp" />
     <ClCompile Include="Rollback.cpp" />
-    <ClCompile Include="Up.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ClientStuff\Client.h" />
+    <ClInclude Include="ClientStuff\FileTransferData.h" />
+    <ClInclude Include="ClientStuff\Packet.h" />
+    <ClInclude Include="ClientStuff\PacketManager.h" />
+    <ClInclude Include="ClientStuff\PacketStructs.h" />
+    <ClInclude Include="ClientStuff\PacketType.h" />
     <ClInclude Include="Command.h" />
     <ClInclude Include="Delay.h" />
-    <ClInclude Include="Down.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Left.h" />
     <ClInclude Include="MimicData.h" />
-    <ClInclude Include="Right.h" />
+    <ClInclude Include="Paddles.h" />
     <ClInclude Include="Rollback.h" />
-    <ClInclude Include="Up.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
